@@ -1,0 +1,19 @@
+{
+  "name": "converse-polaris",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [
+    "converse.js",
+    "plugin"
+  ],
+  "scripts": {
+    "start": "./node_modules/.bin/http-server -c-1"
+  },
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "http-server": "latest"
+  },
+  "dependencies": {
+    "lit": "^3.3.0"
+  }
+}
