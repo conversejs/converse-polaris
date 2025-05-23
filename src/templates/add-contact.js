@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, nothing } from 'lit';
 import { getAutoCompleteItem } from '../utils.js';
 
 /**
@@ -83,7 +83,7 @@ export default (el) => {
                   </div>`
                 : ''}
 
-            <button type="submit" class="btn btn-primary">${i18n_add}</button>
+            <button type="submit" disabled="${el.model.get('alert') || nothing}" class="btn btn-primary">${i18n_add}</button>
         </form>
     </div>`;
 };

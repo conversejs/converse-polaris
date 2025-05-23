@@ -14,7 +14,9 @@ const plugin = {
                 this.addEventListener('autocomplete-select', ({ detail }) => {
                     const { suggestion } = detail;
                     const has_chat_account = suggestion.data.chat_status === 1;
-                    if (!has_chat_account) {
+                    if (has_chat_account) {
+                        this.model.set('alert', undefined);
+                    } else {
                         this.model.set('alert', {
                             type: 'warning',
                             message: __('Contact not available'),
