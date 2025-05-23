@@ -20,8 +20,10 @@ const plugin = {
                         this.model.set('alert', {
                             type: 'warning',
                             message: __('Contact not available'),
+                            is_ephemeral: false,
                         });
                     }
+                    this.requestUpdate();
                 });
             }
 
@@ -29,7 +31,6 @@ const plugin = {
                 return tplAddContactModal(this);
             }
         }
-
         api.elements.define("converse-add-contact-modal", AddContactModal);
     },
 };
