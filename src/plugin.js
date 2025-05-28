@@ -12,7 +12,7 @@ const plugin = {
                 this._converse = _converse;
                 super.initialize();
                 this.addEventListener('autocomplete-select', ({ detail }) => {
-                    if (!this.api.settings.get('xhr_user_search_url')) {
+                    if (!api.settings.get('xhr_user_search_url')) {
                         return;
                     }
                     const { suggestion } = detail;
