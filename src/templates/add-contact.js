@@ -1,11 +1,7 @@
 import { html, nothing } from 'lit';
 import { getAutoCompleteItem } from '../utils.js';
 
-/**
- * @param {import('../add-contact.js').default} el
- */
 export default (el) => {
-    debugger;
     const { _converse } = el;
     const { __, api } = _converse;
     const { u } = _converse.env;
@@ -35,7 +31,7 @@ export default (el) => {
                                 name="jid"
                                 placeholder="${i18n_contact_placeholder}"
                                 position="below"
-                                value="${el.model.get('jid') || ''}"
+                                value="${el.contact.get('jid') || ''}"
                             ></converse-autocomplete>`
                           : html`<converse-autocomplete
                                 .list="${getJIDsAutoCompleteList()}"
@@ -44,7 +40,7 @@ export default (el) => {
                                 min_chars="2"
                                 filter="startswith"
                                 ?required="${!api.settings.get('xhr_user_search_url')}"
-                                value="${el.model.get('jid') || ''}"
+                                value="${el.contact.get('jid') || ''}"
                                 placeholder="${i18n_contact_placeholder}"
                                 name="jid"
                             ></converse-autocomplete>`}
@@ -57,7 +53,7 @@ export default (el) => {
                           <input
                               type="text"
                               name="name"
-                              value="${el.model.get('nickname') || ''}"
+                              value="${el.contact.get('nickname') || ''}"
                               class="form-control"
                           />
                       </div>
