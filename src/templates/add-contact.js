@@ -25,13 +25,13 @@ export default (el) => {
                           ? html`<converse-autocomplete
                                 .getAutoCompleteList=${getNamesAutoCompleteList}
                                 .renderItem=${(text, input) => getAutoCompleteItem(_converse, text, input)}
-                                ?required="${true}"
-                                filter="contains"
-                                min_chars="2"
-                                name="jid"
-                                placeholder="${i18n_contact_placeholder}"
                                 position="below"
-                                value="${el.contact.get('jid') || ''}"
+                                min_chars="2"
+                                filter="contains"
+                                ?required="${true}"
+                                value="${el.state.get('jid') || ''}"
+                                placeholder="${i18n_contact_placeholder}"
+                                name="jid"
                             ></converse-autocomplete>`
                           : html`<converse-autocomplete
                                 .list="${getJIDsAutoCompleteList()}"
@@ -40,7 +40,7 @@ export default (el) => {
                                 min_chars="2"
                                 filter="startswith"
                                 ?required="${!api.settings.get('xhr_user_search_url')}"
-                                value="${el.contact.get('jid') || ''}"
+                                value="${el.state.get('jid') || ''}"
                                 placeholder="${i18n_contact_placeholder}"
                                 name="jid"
                             ></converse-autocomplete>`}
@@ -53,7 +53,7 @@ export default (el) => {
                           <input
                               type="text"
                               name="name"
-                              value="${el.contact.get('nickname') || ''}"
+                              value="${el.state.get('nickname') || ''}"
                               class="form-control"
                           />
                       </div>
