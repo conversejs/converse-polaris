@@ -79,7 +79,7 @@ export default (el) => {
                   </div>`
                 : ''}
 
-            <button type="submit" disabled="${el.model.get('alert') || nothing}" class="btn btn-primary">${i18n_add}</button>
+            <button type="submit" disabled="${el.state.get('alert') || nothing}" class="btn btn-primary">${i18n_add}</button>
         </form>
     </div>`;
 };
